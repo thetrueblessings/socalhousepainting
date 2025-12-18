@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SoCal House Painting | Painting and Carpentry Services</title>
+<meta name="description" content="SoCal House Painting delivers clean, durable painting and carpentry results for homes and businesses across Southern California. Explore services and locations." />
+
+<style>
+  :root{
+    --bg:#0b1220;
+    --panel:#0f1a33;
+    --card:#101f3d;
+    --text:#eaf0ff;
+    --muted:rgba(234,240,255,.78);
+    --soft:rgba(255,255,255,.10);
+    --brand1:#6ee7ff;
+    --brand2:#a78bfa;
+    --brand3:#fb7185;
+    --white:#ffffff;
+    --shadow: 0 18px 45px rgba(0,0,0,.35);
+    --radius:18px;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background:
+      radial-gradient(1200px 700px at 15% 15%, rgba(110,231,255,.18), transparent 55%),
+      radial-gradient(900px 600px at 85% 20%, rgba(167,139,250,.18), transparent 50%),
+      radial-gradient(900px 600px at 30% 90%, rgba(251,113,133,.14), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.75;
+  }
+
+  a{color:var(--text);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 18px;}
+
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter: blur(10px);
+    background: rgba(11,18,32,.68);
+    remember: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .topbar .inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 0;
+    gap:14px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+    text-decoration:none;
+  }
+  .logoMark{
+    width:42px; height:42px; border-radius:14px;
+    background:
+      linear-gradient(135deg, rgba(110,231,255,.85), rgba(167,139,250,.85));
+    box-shadow: 0 12px 30px rgba(167,139,250,.22);
+    position:relative;
+    overflow:hidden;
+  }
+  .logoMark:before{
+    content:"";
+    position:absolute; inset:-30%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.55), transparent 55%);
+    transform: rotate(18deg);
+  }
+  .brandText strong{display:block; font-size:15px; letter-spacing:.2px;}
+  .brandText span{display:block; font-size:12px; color:var(--muted);}
+
+  .navlinks{
+    display:flex; gap:10px; flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  .pill{
+    text-decoration:none;
+    font-size:12.5px;
+    color:var(--muted);
+    padding:8px 12px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:999px;
+    background: rgba(255,255,255,.03);
+  }
+  .pill:hover{color:var(--text); border-color: rgba(255,255,255,.18);}
+
+  .hero{
+    padding:54px 0 26px;
+  }
+  .heroGrid{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap:18px;
+    align-items:stretch;
+  }
+  @media (max-width: 900px){
+    .heroGrid{grid-template-columns:1fr;}
+  }
+
+  .heroMain{
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(110,231,255,.12), rgba(167,139,250,.12)),
+      radial-gradient(900px 600px at 20% 20%, rgba(110,231,255,.10), transparent 55%),
+      rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: var(--shadow);
+    padding:28px;
+    position:relative;
+    overflow:hidden;
+    min-height: 340px;
+  }
+  .heroMain:before{
+    content:"";
+    position:absolute;
+    width:320px; height:320px;
+    border-radius:999px;
+    background: radial-gradient(circle at 30% 30%, rgba(110,231,255,.22), transparent 60%);
+    top:-120px; right:-120px;
+  }
+  .heroMain:after{
+    content:"";
+    position:absolute;
+    width:340px; height:340px;
+    border-radius:999px;
+    background: radial-gradient(circle at 30% 30%, rgba(251,113,133,.18), transparent 60%);
+    bottom:-140px; left:-140px;
+  }
+
+  .hero h1{
+    margin:0 0 10px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.2px;
+  }
+  @media (max-width: 520px){
+    .hero h1{font-size:32px;}
+  }
+  .hero p{margin:0 0 14px; color:var(--muted); max-width: 62ch;}
+
+  .ctaRow{
+    display:flex; gap:12px; flex-wrap:wrap;
+    margin-top:16px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px 16px;
+    border-radius: 14px;
+    text-decoration:none;
+    font-weight:650;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.06);
+    color:var(--text);
+  }
+  .btnPrimary{
+    background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+    color:#071024;
+    border:none;
+    box-shadow: 0 16px 38px rgba(110,231,255,.18);
+  }
+  .btn:hover{transform: translateY(-1px);}
+  .btn:active{transform: translateY(0px);}
+
+  .heroSide{
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: var(--shadow);
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .badgeRow{
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .badge{
+    font-size:12px;
+    padding:8px 10px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.04);
+    color:var(--muted);
+  }
+  .miniCard{
+    border-radius: 16px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.10);
+    padding:14px;
+  }
+  .miniCard strong{display:block; margin-bottom:6px;}
+  .miniCard p{margin:0; color:var(--muted); font-size:13.5px;}
+
+  section{
+    padding: 26px 0;
+  }
+
+  .panel{
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: var(--shadow);
+    padding: 26px;
+  }
+
+  .sectionTitle{
+    margin:0 0 10px;
+    font-size:26px;
+    letter-spacing:.2px;
+  }
+  .lead{margin:0; color:var(--muted); max-width: 78ch;}
+
+  .grid2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+    margin-top:16px;
+  }
+  @media (max-width: 900px){
+    .grid2{grid-template-columns:1fr;}
+  }
+
+  .cards{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:14px;
+    margin-top:16px;
+  }
+
+  .serviceCard{
+    border-radius: 18px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    padding:18px;
+  }
+  .serviceCard h3{margin:0 0 8px; font-size:18px;}
+  .serviceCard p{margin:0 0 10px; color:var(--muted);}
+  .serviceCard p:last-child{margin-bottom:0;}
+  .serviceCard a{
+    color: var(--text);
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .whyGrid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:14px;
+    margin-top:16px;
+  }
+  @media (max-width: 900px){
+    .whyGrid{grid-template-columns:1fr;}
+  }
+  .whyBox{
+    border-radius: 18px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    padding:16px;
+  }
+  .whyBox strong{display:block; margin-bottom:6px;}
+  .whyBox p{margin:0; color:var(--muted);}
+
+  .locList{
+    list-style:none;
+    padding:0;
+    margin:14px 0 0;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+  }
+  @media (max-width: 900px){
+    .locList{grid-template-columns:1fr;}
+  }
+  .locItem{
+    border-radius: 16px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    padding:14px 14px;
+  }
+  .locItem a{
+    color: var(--text);
+    font-weight: 750;
+    text-decoration:none;
+  }
+  .locItem a:hover{text-decoration: underline; text-underline-offset: 3px;}
+  .locItem p{margin:6px 0 0; color:var(--muted); font-size:13.5px;}
+
+  .mapWrap{
+    border-radius: var(--radius);
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.03);
+    box-shadow: var(--shadow);
+  }
+
+  .footer{
+    padding: 34px 0 50px;
+  }
+  .ctaPanel{
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(110,231,255,.16), rgba(167,139,250,.16)),
+      rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow: var(--shadow);
+    padding: 26px;
+    text-align:center;
+  }
+  .ctaPanel h2{margin:0 0 10px; font-size:26px;}
+  .ctaPanel p{margin:0 auto 14px; max-width: 86ch; color:var(--muted);}
+  .copyright{
+    text-align:center;
+    margin-top:16px;
+    color: rgba(234,240,255,.70);
+    font-size: 13px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="inner">
+      <a class="brand" href="https://socalhousepainting.com/">
+        <div class="logoMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <strong>SoCal House Painting</strong>
+          <span>Painting and carpentry for homes and businesses</span>
+        </div>
+      </a>
+      <div class="navlinks" aria-label="Quick navigation">
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#why">Why us</a>
+        <a class="pill" href="#locations">Locations</a>
+        <a class="pill" href="#map">Map</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="heroGrid">
+      <div class="heroMain">
+        <h1>Modern Painting That Looks Great Today and Holds Up Tomorrow</h1>
+        <p>
+          A fresh paint job should do more than look good on day one. It should feel clean, even, and well finished, and it should also protect the surfaces underneath. SoCal House Painting focuses on strong prep work, careful application, and a tidy jobsite, so your home or business gets results that stay solid through real daily life.
+        </p>
+        <p>
+          If you are repainting a home, upgrading a storefront, or improving a rental property, you want work that is easy to trust. That means clear communication, the right materials, and a team that respects your time and space. Our goal is simple: make your property look better, last longer, and feel easier to maintain.
+        </p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://socalhousepainting.com/">Visit the homepage</a>
+          <a class="btn" href="https://socalhousepainting.com/contact-us/">Contact us</a>
+        </div>
+      </div>
+
+      <aside class="heroSide">
+        <div class="badgeRow">
+          <div class="badge">Careful prep</div>
+          <div class="badge">Clean finish</div>
+          <div class="badge">Respectful crews</div>
+          <div class="badge">Residential and commercial</div>
+        </div>
+
+        <div class="miniCard">
+          <strong>What you can expect</strong>
+          <p>
+            A clear plan, protected floors and surfaces, clean edges, and a finish that looks even in natural light. We work with the details that most people notice first, like trim lines, corners, and high traffic areas.
+          </p>
+        </div>
+
+        <div class="miniCard">
+          <strong>Real world focus</strong>
+          <p>
+            We do not paint like the space will never be used again. We paint for daily life, busy homes, and working businesses, where durability and easy care matter.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT WEBSITE -->
+<section id="about">
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="sectionTitle">About the Website and Our Work</h2>
+      <p class="lead">
+        This website is built to help you quickly understand what we offer, where we work, and what kind of results you can expect. You will find service pages that explain each job type in plain language, along with city pages that show the areas we serve. If you are comparing options, this is a helpful place to start.
+      </p>
+
+      <div class="grid2">
+        <div class="miniCard">
+          <strong>People first approach</strong>
+          <p>
+            We write and plan around what property owners actually want: a finish that looks clean up close, a process that feels organized, and a crew that does not leave a mess behind. You should never feel confused about what is happening next.
+          </p>
+        </div>
+        <div class="miniCard">
+          <strong>Built on experience</strong>
+          <p>
+            Painting looks simple until you see what causes early peeling, stains bleeding through, or uneven sheen on walls. Strong prep, correct primers, proper drying time, and the right coating for the surface make a big difference.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SERVICES -->
+<section>
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="sectionTitle">About Our Services</h2>
+      <p class="lead">
+        Our services show the full picture, not just paint on a wall. We handle residential and commercial painting, plus carpentry support where needed. That matters because many painting problems start with the surface underneath. When trim is damaged, joints are open, or water has weakened wood, the best paint in the world will not hold up without the right repair work.
+      </p>
+      <p class="lead" style="margin-top:10px;">
+        We also understand that homes and businesses have different needs. A family home may need calm colors, low odor planning, and careful protection of furniture and floors. A business may need quick scheduling, clean proof of progress, and coatings that resist scuffs in busy areas. Our service range is built to support both, while keeping the process clear and manageable.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ALL 6 SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="sectionTitle">All Services We Offer</h2>
+      <p class="lead">
+        Below are our six core services. Each one is explained in a simple, practical way, so you can decide what fits your project. You will also see one confirming link per service if you want to read more details on the matching page.
+      </p>
+
+      <div class="cards">
+
+        <div class="serviceCard">
+          <h3>Home Interior and Exterior Painting</h3>
+          <p>
+            Interior and exterior painting for a home is not just about color. It is about comfort, protection, and how the space feels every day. On interior projects, we focus on clean lines, even coverage, and a finish that looks smooth in both daylight and indoor lighting. That means proper patching, sanding, and spot priming, plus careful work around corners, doors, and baseboards. A common real life issue is that walls look fine at night but show roller marks in the morning sun. Good technique and correct paint choice help prevent that.
+          </p>
+          <p>
+            On exterior projects, the goal is both beauty and protection. Sun, moisture, and changing temperatures can wear down surfaces fast. We pay close attention to prep work because prep is what controls how long the paint will last. That can include scraping loose paint, caulking small gaps, and choosing coatings that match the surface. Another real life example is old trim that holds moisture, which can cause paint to bubble. Addressing that early helps avoid repeat costs later.
+          </p>
+          <p>
+            If you want a full refresh for living areas, bedrooms, kitchens, or the outside of your home, start here: <a href="https://socalhousepainting.com/home-interior-and-exterior-painting/">home interior and exterior painting</a>.
+          </p>
+        </div>
+
+        <div class="serviceCard">
+          <h3>Commercial Interior and Exterior Painting</h3>
+          <p>
+            Commercial painting is about maintaining a professional look while keeping the space functional. Most businesses cannot shut down for long confirming; they need a clear schedule and a clean work zone. We plan projects in a way that supports daily operations, whether that means working after hours, focusing on sections at a time, or using fast cure systems where appropriate. A good commercial paint job should not just look fresh, it should also be easy to clean and hard to damage.
+          </p>
+          <p>
+            Inside a business, paint affects the experience of customers and staff. Clean walls and trim can make a space feel brighter, more organized, and more welcoming. In high traffic areas, scuffs and marks are common, so choosing the right finish matters. Outside, the building exterior is your first impression. Faded paint or peeling surfaces can make a place look older than it is. Proper prep and weather aware scheduling helps avoid early failure.
+          </p>
+          <p>
+            If you need a confident, polished look for offices, retail, or multi unit buildings, learn more here: <a href="https://socalhousepainting.com/commercial-interior-and-exterior-painting/">commercial interior and exterior painting</a>.
+          </p>
+        </div>
+
+        <div class="serviceCard">
+          <h3>Cabinet Painting</h3>
+          <p>
+            Cabinet painting is one of the fastest ways to change the feel of a kitchen or bathroom without replacing everything. Many homeowners think cabinets just need paint, but the truth is the prep is more important than the color. Cabinets are touched every day. Oils from hands, cooking residue, and cleaning products can weaken the bond of paint if the surface is not cleaned and prepped correctly. Our process is built around clean prep, correct primer selection, and finishes that resist chipping and staining.
+          </p>
+          <p>
+            A real life example: some cabinets look smooth after one coat, but the finish can start to scratch if the paint system is wrong for the material. Wood, laminate, and MDF surfaces can behave differently. Hardware removal, labeling, and careful reinstallation helps keep everything aligned, so doors close right and drawers slide well. The goal is a finish that looks factory clean, not thick or uneven.
+          </p>
+          <p>
+            If your cabinets look dated but the structure is still strong, this service can be a smart upgrade: <a href="https://socalhousepainting.com/cabinet-painting/">cabinet painting</a>.
+          </p>
+        </div>
+
+        <div class="serviceCard">
+          <h3>Lead Abatement</h3>
+          <p>
+            Lead abatement is a safety focused service for properties that may contain lead based paint. This is most common in older buildings. The risk is not just paint on the wall, it is what happens when that paint is disturbed through sanding, scraping, or renovation. Dust can spread fast and can be harmful, especially for children and pregnant individuals. That is why lead work needs a careful process, clear containment, and safe cleanup practices.
+          </p>
+          <p>
+            A simple real life scenario is a homeowner who wants to repaint older trim. If the trim has old paint layers, normal sanding can create dust that moves into nearby rooms. A safe plan includes containment, protective equipment, and proper disposal methods. It is also important to keep the site clean and organized during work, not just at the end. The goal is to reduce risk and support a healthier indoor environment.
+          </p>
+          <p>
+            If you think a property may have lead paint and you want safe handling, review this service: <a href="https://socalhousepainting.com/lead-abatement/">lead abatement</a>.
+          </p>
+        </div>
+
+        <div class="serviceCard">
+          <h3>Residential Carpentry</h3>
+          <p>
+            Residential carpentry supports strong paint results by fixing what paint cannot fix on its own. If trim is cracked, wood has rot, or joints are opening, paint will not hide the problem for long. Carpentry gives you clean edges, stable surfaces, and better finishing lines. It can include baseboard repair, trim replacement, small framing fixes, and other detail work that prepares a home for a polished final look.
+          </p>
+          <p>
+            A real life example is around windows and doors. When trim is uneven, the paint line will always look messy, even if the color is perfect. When the trim is repaired and aligned, the finished paint looks sharper and more professional. Carpentry can also help with small gaps that let in drafts or moisture, which protects the home and can reduce future damage.
+          </p>
+          <p>
+            If your project includes repairs or finishing details that need real craftsmanship, start here: <a href="https://socalhousepainting.com/residential-carpentry/">residential carpentry</a>.
+          </p>
+        </div>
+
+        <div class="serviceCard">
+          <h3>Commercial Carpentry</h3>
+          <p>
+            Commercial carpentry is focused on durability, safety, and clean presentation. Businesses often deal with daily wear from customers, carts, equipment, and frequent cleaning. Trim can get damaged, corners can take hits, and surfaces can weaken over time. When these issues are fixed correctly, the space looks better and also works better. This service supports build outs, repairs, and finishing work that helps a business stay polished and functional.
+          </p>
+          <p>
+            One common real life situation is a retail space where baseboards are constantly scuffed or damaged. Replacing or repairing them gives the walls a cleaner edge and makes repainting much more effective. Another example is office upgrades where small carpentry changes improve how a room feels, such as cleaner framing details or repaired door casings. Strong carpentry creates a solid base for a clean paint finish.
+          </p>
+          <p>
+            If you need carpentry support for a professional setting, you can review details here: <a href="https://socalhousepainting.com/commercial-carpentry/">commercial carpentry</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WE BEST -->
+<section id="why">
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="sectionTitle">Why We Are a Better Choice</h2>
+      <p class="lead">
+        Anyone can promise a fresh look. The difference comes from how the work is planned and executed. We focus on the steps that protect your investment: surface prep, correct materials, clean jobsite habits, and clear communication. This is the kind of approach that helps paint last and keeps projects stress free for property owners.
+      </p>
+
+      <div class="whyGrid">
+        <div class="whyBox">
+          <strong>Prep that supports long life</strong>
+          <p>
+            We focus on sanding, patching, priming, and proper surface readiness. This is what helps reduce peeling and uneven texture later.
+          </p>
+        </div>
+        <div class="whyBox">
+          <strong>Clean lines and tidy work zones</strong>
+          <p>
+            Floors and surfaces are protected, edges are kept neat, and cleanup is handled with care so the space feels normal again quickly.
+          </p>
+        </div>
+        <div class="whyBox">
+          <strong>Practical guidance</strong>
+          <p>
+            We help you choose finishes and options that fit how the space is used, including busy hallways, kitchens, and work areas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="sectionTitle">Our Service Areas</h2>
+      <p class="lead">
+        We serve key cities across Southern California. Each location page includes helpful context about local needs and service options. Click a city name to view that page.
+      </p>
+
+      <ul class="locList">
+        <li class="locItem">
+          <a href="https://socalhousepainting.com/huntington-beach-ca/">Huntington Beach, CA</a>
+          <p>Great for coastal homes that need durable exterior protection and clean interior updates that stay fresh in bright natural light.</p>
+        </li>
+        <li class="locItem">
+          <a href="https://socalhousepainting.com/laguna-beach-ca/">Laguna Beach, CA</a>
+          <p>Ideal for detailed finishing work where the final look matters, including trim lines, smooth walls, and premium level presentation.</p>
+        </li>
+        <li class="locItem">
+          <a href="https://socalhousepainting.com/costa-mesa-ca/">Costa Mesa, CA</a>
+          <p>Strong fit for family homes, rentals, and business spaces that need a clean refresh with a process that stays organized.</p>
+        </li>
+        <li class="locItem">
+          <a href="https://socalhousepainting.com/irvine-ca/">Irvine, CA</a>
+          <p>Well suited for modern interiors and professional commercial spaces where smooth finishes and neat work zones matter.</p>
+        </li>
+        <li class="locItem">
+          <a href="https://socalhousepainting.com/tustin-ca/">Tustin, CA</a>
+          <p>Great option for repainting projects that need careful prep, smart finish choices, and a simple plan from start to finish.</p>
+        </li>
+        <li class="locItem">
+          <a href="https://socalhousepainting.com/">Newport Beach, CA</a>
+          <p>Perfect for coastal properties that need a polished look and strong surface protection to handle sun exposure and moisture.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="sectionTitle">Our Map</h2>
+      <p class="lead">
+        Use the map below to view the pinned location. If you are unsure which service fits your project, reach out through the contact page and share a few details about the space.
+      </p>
+
+      <div class="mapWrap" style="margin-top:14px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d112317.61181796074!2d-82.61941!3d28.391322000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c29ecf63660bc5%3A0x573987889489e3ae!2s16048%20Sawgrass%20Breeze%20Ave%2C%20Hudson%2C%20FL%2034667!5e0!3m2!1sen!2sus!4v1766033240063!5m2!1sen!2sus"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + COPYRIGHT -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="ctaPanel">
+      <h2>Ready for a Clean, Modern Upgrade?</h2>
+      <p>
+        If you want a paint job that looks sharp up close and stays durable in real life, we are here to help. Share your goals, the type of space, and any timing needs, and we will guide you toward the right service. For a quick overview of everything we offer, you can also visit the main site and explore services and locations in one place.
+      </p>
+      <div class="ctaRow" style="justify-content:center;">
+        <a class="btn btnPrimary" href="https://socalhousepainting.com/">Open the homepage</a>
+        <a class="btn" href="https://socalhousepainting.com/contact-us/">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="copyright">Copyright 2026 All rights reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
